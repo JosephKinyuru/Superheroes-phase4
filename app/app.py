@@ -336,7 +336,7 @@ class PowerByID(Resource):
                 db.session.commit()
 
                 response = make_response(
-                    power_schema.dump(power),
+                    jsonify({"description" : "Updated description."}),
                     200
                 )
                 response.headers["Content-Type"] = "application/json"
