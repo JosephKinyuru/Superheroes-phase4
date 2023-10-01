@@ -131,7 +131,7 @@ class HeroByID(Resource):
             powers_data = []
 
             for hp in hero_powers:
-                power = Power.query.get(hp.power_id)
+                power = db.session.get(Power, hp.power_id)
                 if power:
                     powers_data.append({
                         "id": power.id,
@@ -412,7 +412,7 @@ class HeroPowers(Resource):
                 powers_data = []
 
                 for hp in hero_powers:
-                    power = Power.query.get(hp.power_id)
+                    power = db.session.get(Power, hp.power_id)
                     if power:
                         powers_data.append({
                             "id": power.id,
