@@ -33,10 +33,10 @@ with app.app_context():
         pass
 
     powers = []
-    for i in range(25):
+    for i in range(50):
         power = Power(
             name=fake.unique.company(),
-            description=fake.text(max_nb_chars=20), 
+            description = ' '.join(fake.words(nb=random.randint(5, 10)))
         )
         powers.append(power)
 

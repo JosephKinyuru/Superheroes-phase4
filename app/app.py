@@ -65,8 +65,16 @@ class Heroes(Resource):
         heroes = Hero.query.all()
 
         if heroes :
+            response_data = []
+            for hero in heroes :
+                response_data.append({
+                    "id":hero.id,
+                    "name":hero.name,
+                    "super_name":hero.super_name
+                })
+
             response = make_response(
-                heroes_schema.dump(heroes),
+                jsonify(response_data),
                 200,
             )
             response.headers["Content-Type"] = "application/json"
@@ -134,7 +142,7 @@ class HeroByID(Resource):
             response_data = {
                 "id": hero.id,
                 "name": hero.name,
-                "super_name": hero.supername,
+                "super_name": hero.super_name,
                 "powers": powers_data
             }
 
@@ -228,8 +236,17 @@ class Powers(Resource):
         powers = Power.query.all()
 
         if powers :
+            response_data = []
+
+            for power in powers :
+                response_data.append({
+                    "id":power.id,
+                    "name":power.name,
+                    "description":power.description,
+                })
+
             response = make_response(
-                powers_schema.dump(powers),
+                jsonify(response_data),
                 200,
             )
             response.headers["Content-Type"] = "application/json"
@@ -406,7 +423,7 @@ class HeroPowers(Resource):
                 response_data = {
                     "id": hero.id,
                     "name": hero.name,
-                    "super_name": hero.supername,
+                    "super_name": hero.super_name,
                     "powers": powers_data
                 }
 

@@ -43,7 +43,7 @@ class HeroPower(db.Model):
     power_id = db.Column(db.Integer, db.ForeignKey('powers.id'))
 
     hero = db.relationship('Hero', back_populates='hero_power')
-    power = db.relationship('Power', back_populates='heo_power')
+    power = db.relationship('Power', back_populates='hero_power')
 
     @validates('strength')
     def validate_strength(self, key, strength):
