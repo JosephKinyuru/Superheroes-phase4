@@ -9,7 +9,7 @@ The project has a database for super heroes and their powers.
 
 **Note** 
 - The client side has legacy code and may be slow or encounter errors
-
+- The server must be on port 5555 and the client side has to run from local host 3000
 
 # Author
 Joseph Kinyuru
