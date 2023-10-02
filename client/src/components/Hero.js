@@ -10,7 +10,7 @@ function Hero() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`/heroes/${id}`).then((r) => {
+    fetch(`http://127.0.0.1:5555/heroes/${id}`).then((r) => {
       if (r.ok) {
         r.json().then((hero) =>
           setHero({ data: hero, error: null, status: "resolved" })

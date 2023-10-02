@@ -5,9 +5,15 @@ function Home() {
   const [heros, setHeros] = useState([]);
 
   useEffect(() => {
-    fetch("/heroes")
-      .then((r) => r.json())
-      .then(setHeros);
+    fetch("http://127.0.0.1:5555/heroes")
+    .then((r) => {
+      if (!r.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return r.json();
+    })
+    .then(setHeros)
+    .catch(error => console.error('Error fetching data:', error));
   }, []);
 
   return (

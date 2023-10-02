@@ -12,7 +12,7 @@ function PowerEditForm() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`/powers/${id}`).then((r) => {
+    fetch(`http://127.0.0.1:5555/powers/${id}`).then((r) => {
       if (r.ok) {
         r.json().then((power) => {
           setPower({ data: power, errors: [], status: "resolved" });
