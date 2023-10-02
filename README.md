@@ -1,17 +1,14 @@
 # Project Description
-
+The project has a database for super heroes and their powers.
 
 # How to launch project
-- Cd into server directory `cd server`
 - Seed the database `python3 seed.py`   (Optional)
-- Run the application `flask run` or `python3 app.py`
-- Open the provided link in postman or on browser
+- Start the server `python3 app.py --prefix app`
+- Start the client side `npm start --prefix client`
+- Open the provided link to browser for the client or open local host 300 in a browser
 
 **Note** 
--  The restful API is based on JSON format so all `POST` requests should be in JSON and the responses will also be in JSON.
--  If you post data into the database then run `seed.py` the data will be deleted. Its better to post after running seed.py so that you can view your data.
-- The seed data is mainly for helping to visualize the `GET` responses.
-- There are more HTTP requests which can be sent in the API . Explore them within the resources in the app.py file
+- The client side has legacy code and may be slow or encounter errors
 
 
 # Author
