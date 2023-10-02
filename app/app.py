@@ -5,6 +5,7 @@ from flask_marshmallow import Marshmallow
 from flask_migrate import Migrate
 from flask_restful import Api, Resource
 from werkzeug.exceptions import NotFound
+from flask_cors import CORS
 
 from models import db, Hero , Power , HeroPower
 
@@ -15,6 +16,8 @@ app.json.compact = False
 
 migrate = Migrate(app, db)
 db.init_app(app)
+CORS(app)
+CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 
 ma = Marshmallow(app)
 
